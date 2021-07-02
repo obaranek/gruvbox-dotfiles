@@ -1,0 +1,42 @@
+{
+    "prettier.disableSuccessMessage": true,
+    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown","html","sh", "javascript"],
+    "tsserver.formatOnType": true,
+    "coc.preferences.formatOnType": true,
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": true,
+    "prettier.eslintIntegration": true,
+    "clangd.semanticHighlighting": true,
+    "clangd.path": "/home/obaranek/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
+      "rootPatterns": [
+        ".stack.yaml",
+        ".hie-bios",
+        "BUILD.bazel",
+        "cabal.config",
+        "package.yaml"
+      ],
+      "filetypes": [
+        "hs",
+        "lhs",
+        "haskell"
+      ]
+    },
+    "ccls": {
+    "command": "ccls",
+    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+    "rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+    "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+  }
+    }
+}

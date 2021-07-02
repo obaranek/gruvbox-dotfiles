@@ -1,0 +1,1 @@
+/home/obaranek/.dotfiles/config/nvim/plug-config/coc.vim

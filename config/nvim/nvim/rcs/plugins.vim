@@ -1,0 +1,1 @@
+/home/obaranek/.dotfiles/config/nvim/rcs/plugins.vim
