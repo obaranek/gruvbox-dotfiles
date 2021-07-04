@@ -1,0 +1,190 @@
+# setting system font
+font pango: Source Sans Pro 11
+
+# setting super key
+set $mod Mod4
+#setting float key
+floating_modifier Mod4
+
+# naming workspaces
+set $ws1 "1: TERM"
+set $ws2 "2: DEV"
+set $ws3 "3: WWW"
+set $ws4 "4: FS"
+set $ws5 "5: MAIL"
+set $ws6 "6: CHAT"
+set $ws7 "7: ZOOM"
+set $ws8 "8: WRK"
+set $ws9 "9: VID"
+set $ws10 "10: MUSIC"
+
+# setting Gruvbox Theme
+set $base00 #282828
+set $base01 #3c3836
+set $base02 #504945
+set $base03 #665c54
+set $base04 #bdae93
+set $base05 #d5c4a1
+set $base06 #ebdbb2
+set $base07 #fbf1c7
+set $base08 #fb4934
+set $base09 #fe8019
+set $base0A #fabd2f
+set $base0B #b8bb26
+set $base0C #8ec07c
+set $base0D #83a598
+set $base0E #d3869b
+set $base0F #d65d0e
+
+client.focused          $base05 $base0D $base00 $base0D $base0C
+client.focused_inactive $base01 $base01 $base05 $base03 $base01
+client.unfocused        $base01 $base00 $base05 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base05 $base00 $base00
+client.background       $base07
+
+# configuring key bindings
+# apps
+bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" drun -theme $HOME/.config/rofi-collection/gruvbox/gruvbox.rasi
+bindsym $mod+b exec firefox-developer-edition
+bindsym $mod+y exec alacritty
+bindsym $mod+p exec emacs
+bindsym $mod+c exec flameshot gui
+
+# navigation
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# moving windows
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# changing layouts
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+backslash split h
+bindsym $mod+minus split v
+
+# configuring multimedia keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks | egrep -B 1 "RUNNING" | egrep -o [0-9]) +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pactl list sinks | egrep -B 1 "RUNNING" | egrep -o [0-9]) -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pactl list sinks | egrep -B 1 "RUNNING" | egrep -o [0-9]) toggle
+
+# configuring brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+# configuring media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym $mode+q exec playerctl play-pause
+bindsym $mod+i exec playerctl next
+bindsym $mod+u exec playerctl previous
+
+
+# configuring resizing windows
+bindsym $mod+r mode "resize"
+mode "resize" {
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+# system binding
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+shift+x exec i3lock -c 282a36
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+q kill
+#bindsym $mod+Shift+m exec bash ~/.i3/switch.sh
+
+
+#Aranging workspaces to monitors
+workspace 1 output DP-1
+workspace 2 output DP-1
+workspace 3 output DP-1
+workspace 4 output DP-1
+workspace 5 output DP-1
+#workspace 6 output eDP-1
+#workspace 7 output eDP-1
+#workspace 8 output eDP-1
+#workspace 9 output eDP-1
+#workspace 10 output eDP-1
+workspace 6 output DP-1
+workspace 7 output DP-1
+workspace 8 output DP-1
+workspace 9 output DP-1
+workspace 10 output DP-1
+
+
+#i3-gaps
+gaps inner 10
+gaps outer 0
+for_window [class="^.*"] border pixel 3
+hide_edge_borders both
+
+bindsym $mod+Control+i gaps inner all set 20
+bindsym $mod+Control+o gaps outer all set 0
+bindsym $mod+Control+l gaps outer current plus 5
+bindsym $mod+Control+h gaps outer current minus 5
+bindsym $mod+Control+k gaps inner current plus 5
+bindsym $mod+Control+j gaps inner current minus 5
+bindsym $mod+Control+n gaps inner all set 0
+
+#Startup
+exec_always bash /home/obaranek/.screenlayout/monitoronly.sh
+exec --no-startup-id dunst
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id picom
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id $HOME/.config/polybar/gruvbox/launch.sh
