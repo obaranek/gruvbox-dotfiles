@@ -87,7 +87,7 @@ bindsym $mod+Shift+10 move container to workspace $ws10
 # changing layouts
 bindsym $mod+Control+s layout stacking
 bindsym $mod+Control+t layout tabbed
-bindsym $mod+Control+g layout toggle split
+bindsym $mod+Control+p layout toggle split
 bindsym $mod+Contol+backslash split h
 bindsym $mod+Control+minus split v
 
@@ -123,11 +123,11 @@ mode "resize" {
 }
 
 # system binding
+bindsym $mod+q kill
+bindsym $mod+f fullscreen toggle
 bindsym $mod+Control+c reload
 bindsym $mod+Control+r restart
-bindsym $mod+Control+f fullscreen toggle
 bindsym $mod+Control+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+Control+q kill
 bindsym button3  floating toggle
 bindsym $mod+button3 focus mode_toggle
 bindsym $mod+a focus parent

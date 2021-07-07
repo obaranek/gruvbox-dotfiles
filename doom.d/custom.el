@@ -18,7 +18,7 @@
  '(jdee-db-requested-breakpoint-face-colors (cons "#1B2229" "#98be65"))
  '(jdee-db-spec-breakpoint-face-colors (cons "#1B2229" "#3f444a"))
  '(objed-cursor-color "#ff6c6b")
- '(package-selected-packages '(base16-theme gruvbox-theme))
+ '(package-selected-packages '(web-mode base16-theme gruvbox-theme))
  '(pdf-view-midnight-colors '("#fdf4c1" . "#32302f"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])

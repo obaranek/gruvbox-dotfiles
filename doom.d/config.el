@@ -19,7 +19,7 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "Hasklig" :size 20 :weight 'semi-light)
+(setq doom-font (font-spec :family "Hasklig" :size 18 :weight 'semi-light)
       doom-variable-pitch-font (font-spec :family "Hasklig" :size 18))
 
 (setq doom-themes-enable-bold t)
@@ -78,6 +78,19 @@
       company-idle-delay 0.0)
 
 (use-package! lsp-ui)
+
+(use-package web-mode
+  :defer t
+  :mode ("\\.html\\'" "\\.php\\'"
+         "\\.js\\'" "\\.ts\\'" "\\.jsx\\'" "\\.tsx\\'"
+         "\\.vue\\'" "\\.eex\\'")
+  :config
+  (setq web-mode-enable-auto-closing t
+        web-mode-enable-auto-opening t
+        web-mode-enable-auto-indentation t
+        web-mode-enable-auto-quoting nil
+        web-mode-script-padding 0
+        web-mode-style-padding 0))
 
 
 ;; (use-package! company
