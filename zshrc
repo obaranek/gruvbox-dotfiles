@@ -26,38 +26,6 @@ source ~/.config/zsh/plugins/completion.zsh
 source ~/.config/zsh/plugins/bd.zsh
 autoload -Uz bd; bd
 
-#vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-#changing cursor on vi mode
-cursor_mode() {
-    # See https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html for cursor shapes
-    cursor_block='\e[2 q'
-    cursor_beam='\e[6 q'
-
-    function zle-keymap-select {
-        if [[ ${KEYMAP} == vicmd ]] ||
-            [[ $1 = 'block' ]]; then
-            echo -ne $cursor_block
-        elif [[ ${KEYMAP} == main ]] ||
-            [[ ${KEYMAP} == viins ]] ||
-            [[ ${KEYMAP} = '' ]] ||
-            [[ $1 = 'beam' ]]; then
-            echo -ne $cursor_beam
-        fi
-    }
-
-    zle-line-init() {
-        echo -ne $cursor_beam
-    }
-
-    zle -N zle-keymap-select
-    zle -N zle-line-init
-}
-
-cursor_mode
-
 #syntax highlighting
 
 source /home/obaranek/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -68,19 +36,6 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 #dir colors
 [[ -f "$HOME/.dircolors" ]] \
     && eval "$(dircolors "$HOME/.dircolors")"
-
-
-#mappings
-zmodload zsh/complist
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-
-#editing command line
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey -M vicmd v edit-command-line
 
 #fzf
 source /usr/share/fzf/completion.zsh

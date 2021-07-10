@@ -82,7 +82,7 @@
 (use-package web-mode
   :defer t
   :mode ("\\.html\\'" "\\.php\\'"
-         "\\.js\\'" "\\.ts\\'" "\\.jsx\\'" "\\.tsx\\'"
+         "\\.jsx\\'" "\\.tsx\\'"
          "\\.vue\\'" "\\.eex\\'")
   :config
   (setq web-mode-enable-auto-closing t
@@ -91,25 +91,4 @@
         web-mode-enable-auto-quoting nil
         web-mode-script-padding 0
         web-mode-style-padding 0))
-
-
-;; (use-package! company
-;;   :hook
-;;   ((lsp-mode        . company-mode)
-;;    (restclient-mode . company-mode))
-;;   :bind (:map company-active-map
-;;               ("C-n"   . company-select-next)
-;;               ("C-p"   . company-select-previous)
-;;               ("RET"   . company-complete-selection)
-;;               ("<ret>" . company-complete-selection))
-;;   :config
-;;   (setq company-idle-delay 0) ; Delay to complete
-;;   (setq company-minimum-prefix-length 1)
-;;   (setq company-selection-wrap-around t) ; Loops around suggestions
-
-;;   (if (display-graphic-p)
-;;       (define-key company-active-map [tab] 'company-select-next)
-;;     (define-key company-active-map (kbd "C-i") 'company-select-next))
-
-;;   )
 

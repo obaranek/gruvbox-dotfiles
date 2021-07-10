@@ -85,9 +85,9 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+10 move container to workspace $ws10
 
 # changing layouts
-bindsym $mod+Control+s layout stacking
-bindsym $mod+Control+t layout tabbed
-bindsym $mod+Control+p layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+e layout toggle split
 bindsym $mod+Contol+backslash split h
 bindsym $mod+Control+minus split v
 
