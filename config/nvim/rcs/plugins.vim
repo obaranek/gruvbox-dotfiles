@@ -26,5 +26,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 
 Plug 'rbgrouleff/bclose.vim'
 
+Plug 'mhinz/vim-startify'
 call plug#end()
 
