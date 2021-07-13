@@ -2,10 +2,8 @@ set relativenumber
 set backspace=indent,eol,start
 set nohlsearch
 set hidden
-filetype plugin on
-set wildmenu                    " Turn on the Wild menu
-set wildmode=longest,list,full  " Better looking wildmenu for autocompletion
-filetype indent on
+set wildmenu                    
+set wildmode=longest,list,full  
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -25,12 +23,14 @@ set scrolloff=8
 set noshowmode
 set encoding=utf8
 set clipboard=unnamedplus
-syntax enable
-syntax on
 set t_Co=256
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
+syntax enable
+syntax on
+filetype plugin on
+filetype indent on
 
 augroup highlight_yank
     autocmd!
@@ -43,10 +43,10 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd FileType javascriptreact setlocal ts=2 sts=2 sw=2
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2
 autocmd FileType css setlocal ts=2 sts=2 sw=2

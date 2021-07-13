@@ -27,7 +27,13 @@ vmap gc <Plug>NERDCommenterToggle
 " yank
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
-"switching buffers
-map <leader>bn :bnext<CR>
-map <leader>bp :bprev<CR>
+" switching buffers
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprev<CR>
+
+"fzf 
+map <leader>. :Files<CR>
+map <leader><leader> :GFiles<CR>
+map <leader>bb :Buffers<CR>

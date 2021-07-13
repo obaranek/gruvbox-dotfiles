@@ -5,10 +5,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim', { 'do': { -> fzf#install() } }
 Plug 'jremmen/vim-ripgrep'
 
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
