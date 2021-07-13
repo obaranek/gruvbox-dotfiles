@@ -1,27 +1,35 @@
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
+let NERDTreeDirArrowExpandable=""
+let NERDTreeDirArrowCollapsible=""
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['node_modules']
+let NERDTreeMinimalUI=1
+let NERDTreeMouseMode=3
+let NERDTreeShowBookmarks=1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
 
-" augroup highlight_yank
-"     autocmd!
-"     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-" augroup END
 
-autocmd BufWritePre * :call TrimWhitespace()
+nmap gc <Plug>NERDCommenterToggle
+vmap gc <Plug>NERDCommenterToggle
 
-"Disable automatic commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+ensure_installed = { "c", "rust", "cpp", "css", "fish", "go", "html", "javascript", "haskell", "python", "rust", "typescript" },
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+}
+EOF

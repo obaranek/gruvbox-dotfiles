@@ -9,24 +9,4 @@ endif
      set termguicolors
  endif
 
-"Dracula
-let g:dracula_bold      = 1
-let g:dracula_italic    = 0
-let g:dracula_underline = 0
-let g:dracula_undercurl = 1
-let g:dracula_inverse   = 1
-let g:dracula_colorterm = 1
-
-"OceanicNext
-let g:oceanic_next_terminal_bold = 0
-let g:oceanic_next_terminal_italic = 1
-
-"Oceanic Material
-let g:oceanic_material_allow_bold = 0
-let g:oceanic_material_allow_underline = 0
-let g:oceanic_material_background = "deep"
-
-
-let g:airline_theme = 'gruvbox'
-
 colorscheme gruvbox
