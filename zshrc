@@ -62,6 +62,8 @@ alias grs='git remote show'
 alias glo='git log --pretty="oneline"'
 alias glol='git log --graph --oneline --decorate'
 alias d='dirs -v'
+alias fcd='cd $(fd --type d | fzf)'
+alias fvim='vim $(fzf)'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 #LS color
