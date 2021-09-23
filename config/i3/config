@@ -4,7 +4,7 @@ font pango: Source Sans Pro 11
 # setting super key
 set $mod Mod4
 #setting float key
-floating_modifier Mod4
+floating_modifier $mod
 
 # naming workspaces
 set $ws1 "1: TERM"
@@ -45,7 +45,7 @@ client.background       $base07
 
 # configuring key bindings
 # apps
-bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" drun -theme $HOME/.config/rofi-collection/gruvbox/gruvbox.rasi
+bindsym $mod+d exec rofi -show drun -icon-theme "Papirus" drun -theme $HOME/.config/rofi-collection/nord/nord.rasi
 bindsym $mod+b exec firefox-developer-edition
 bindsym $mod+' exec emacs
 bindsym $mod+c exec flameshot gui

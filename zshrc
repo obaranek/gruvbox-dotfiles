@@ -6,6 +6,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export PATH=/home/obaranek/.local/bin:$PATH
 export JUPYTERLAB_DIR=$HOME/.local/share/jupyter/lab
+export VAULT_ADDR="https://vault.uwblueprint.org:8200"
 
 #options
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
@@ -64,6 +65,8 @@ alias glol='git log --graph --oneline --decorate'
 alias d='dirs -v'
 alias fcd='cd $(fd --type d | fzf)'
 alias fvim='vim $(fzf)'
+alias "uwssh"='ssh -Y obaranek@linux.student.cs.uwaterloo.ca'
+alias "uwmnt"='sshfs -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3,kernel_cache,allow_other,auto_cache,no_readahead obaranek@linux.student.cs.uwaterloo.ca: ~/uwmount'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 #LS color
@@ -71,3 +74,5 @@ LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:c
 export LS_COLORS
 
 bindkey -e
+
+
