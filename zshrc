@@ -38,10 +38,6 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -f "$HOME/.dircolors" ]] \
     && eval "$(dircolors "$HOME/.dircolors")"
 
-#fzf
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
-
 # aliases
 alias ls="ls --color=auto"
 alias vim="nvim"

@@ -62,11 +62,11 @@
 ;;
 (after! flycheck(setq flycheck-check-syntax-automatically '( idle-change new-line save)))
 
-(global-tree-sitter-mode)
-(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+;; (global-tree-sitter-mode)
+;; (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
-(require 'tree-sitter)
-(require 'tree-sitter-langs)
+;; (require 'tree-sitter)
+;; 'tree-sitter-langs)
 
 (setq company-minimum-prefix-length 1
       company-idle-delay 0.0)

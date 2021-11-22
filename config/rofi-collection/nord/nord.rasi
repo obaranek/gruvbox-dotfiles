@@ -1,3 +1,12 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+
 configuration {
   display-run: " ";
   display-drun: "  ";
@@ -30,12 +39,14 @@ element {
   text-color: @fg;
 }
 
-element-icon {
-    size: 1.2em;
-}
-
 element selected {
   text-color: @blue;
+}
+
+element-text {
+  padding: 2;
+  background-color: inherit;
+  text-color: inherit;
 }
 
 entry {
@@ -67,4 +78,8 @@ prompt {
 
 window {
   transparency: "real";
+}
+
+element-icon {
+    size: 1.2em;
 }

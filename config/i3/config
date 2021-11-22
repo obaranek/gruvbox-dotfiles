@@ -1,5 +1,5 @@
 # setting system font
-font pango: Source Sans Pro 11
+font pango: Fira Sans 11
 
 # setting super key
 set $mod Mod4
