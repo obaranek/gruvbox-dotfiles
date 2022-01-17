@@ -22,7 +22,6 @@
        :completion
        (
        company           ; the ultimate code completion backend
-       +childframe
        )
        ;; (helm +fuzzy +childframe)            ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
@@ -31,6 +30,8 @@
        +fuzzy
        +icons
        )
+       (vertico
+        +icons)
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -42,7 +43,7 @@
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;;hydra
        ;;indent-guides     ; highlighted indent columns
-       (ligatures +hasklig)         ; ligatures and symbols to make your code pretty again
+       ;;(ligatures +hasklig)         ; ligatures and symbols to make your code pretty again
        ;;minimap           ; show a map of the code on the side
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ;;nav-flash         ; blink cursor line after big motions
